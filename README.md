@@ -24,7 +24,7 @@ This repository contains scripts that are able to be executed using one line of 
 ### Installation
 
 * Select an environment below, Ubuntu, Debian, or Termux, and copy it's code.
-* Paste your code into Termux and press enter. Set a user name and password.
+* Paste your code into Termux and press enter. Set a user name and password. (The username MUST start with a letter)
 * You will then be asked to select a repository, just press enter twice. (Prevents a repo bug)
 * The script will install everything needed and prompt towards the end for language selection.
 * When the script completes, it will open the x11 app for us. The app will freeze the first run.
@@ -38,7 +38,7 @@ This repository contains scripts that are able to be executed using one line of 
 
 <img src="https://github.com/01101010110/proot-distro-scripts/blob/main/Pictures/ubuntu.png?raw=true" width="100" height="200"> <img src="https://github.com/01101010110/proot-distro-scripts/blob/main/Pictures/ubuntu2.png?raw=true" width="100" height="200">
 
-Builds an Ubuntu Mantic Minotaur proot-distro environment with an xfce4 provided GUI. Installs in about 30 minutes to an hour.
+Builds an Ubuntu proot-distro environment with an xfce4 provided GUI. Installs in about 30 minutes to an hour.
 
 **Copy and paste into Termux:**
 ```
@@ -50,7 +50,7 @@ curl -sL https://raw.githubusercontent.com/01101010110/proot-distro-scripts/main
 
 <img src="https://github.com/01101010110/proot-distro-scripts/blob/main/Pictures/debian.png?raw=true" width="100" height="200"> <img src="https://github.com/01101010110/proot-distro-scripts/blob/main/Pictures/debian2.png?raw=true" width="100" height="200">
 
-Builds a Debian Bookworm proot-distro environment with an xfce4 provided GUI. Installs in about 30 minutes to an hour.
+Builds a Debian proot-distro environment with an xfce4 provided GUI. Installs in about 30 minutes to an hour.
 
 **Copy and paste into Termux:**
 ```
@@ -89,6 +89,7 @@ Adds xRDP support, which allows you to connect to your environment remotely usin
 ```
 curl -sL https://raw.githubusercontent.com/01101010110/proot-distro-scripts/main/xrdp-setup.sh -o xrdp-setup.sh && chmod +x xrdp-setup.sh && source xrdp-setup.sh
 ```
+Use the command xrdpstart to start the service, and grab your ip address for Windows Remote Desktop Connection
 
 #
 ## Optional xRDP Support --- For Termux Only Environments!
@@ -96,30 +97,15 @@ curl -sL https://raw.githubusercontent.com/01101010110/proot-distro-scripts/main
 Adds xRDP support, which allows you to connect to your environment remotely using a computer. 
 
 **Copy and paste inside of Termux:**
+
+Make sure you run this command in the Termux App, and Not in the Termux Environment. The Termux xrdp can't operate correctly if we are connected to the x11 app using our environments, so we need to just use the Termux app's shell.
+
 ```
 curl -sL https://raw.githubusercontent.com/01101010110/proot-distro-scripts/main/xrdp-setup-termux.sh -o xrdp-setup-termux.sh && chmod +x xrdp-setup-termux.sh && source xrdp-setup-termux.sh
 ```
+Use the command startxrdp to restart the service in the future, stopxrdp to stop it. 
 
 #
-## Optional VNC Support --- For Ubuntu and Debian Environments Only! (STILL BEING WORKED ON, IS NOT READY. THIS LINK IS JUST FOR ME FOR TESTING RIGHT NOW)
-
-Adds VNC support, which allows you to connect to your environment remotely using a computer.  
-
-**Copy and paste inside of your environment:**
-```
-curl -sL https://raw.githubusercontent.com/01101010110/proot-distro-scripts/main/vnc-setup.sh -o vnc-setup.sh && chmod +x vnc-setup.sh && source vnc-setup.sh
-```
-
-#
-## Optional VNC Support --- For Termux Only Environments! (STILL BEING WORKED ON, IS NOT READY. THIS LINK IS JUST FOR ME FOR TESTING RIGHT NOW)
-
-Adds VNC support, which allows you to connect to your environment remotely using a computer. 
-
-**Copy and paste inside of your environment:**
-```
-curl -sL https://raw.githubusercontent.com/01101010110/proot-distro-scripts/main/vnc-setup-termux.sh -o vnc-setup-termux.sh && chmod +x vnc-setup-termux.sh && source vnc-setup-termux.sh
-```
-
 ## Process 9 error
 
 You need to run this adb command to fix the process 9 error that will force close Termux
